@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Барлық посттар{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Барлық посттар</h1>
+
+{% for post in posts %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.content[:100] }}...</p>
+            <a href="{{ url_for('post_detail', post_id=post.id) }}" class="btn btn-primary">Толығырақ</a>
+        </div>
+    </div>
+{% else %}
+    <p>Посттар жоқ</p>
+{% endfor %}
+
+<a href="{{ url_for('add_post') }}" class="btn btn-success mt-3">Жаңа пост қосу</a>
+{% endblock %}

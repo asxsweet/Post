@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Постты өңдеу{% endblock %}
+
+{% block content %}
+<h2>Постты өзгерту</h2>
+
+<form method="POST">
+    <div class="mb-3">
+        <label for="title" class="form-label">Тақырып:</label>
+        <input type="text" class="form-control" id="title" name="title" value="{{ post[1] }}" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="content" class="form-label">Мазмұны:</label>
+        <textarea class="form-control" id="content" name="content" rows="5" required>{{ post[2] }}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Сақтау</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Бас тарту</a>
+</form>
+{% endblock %}

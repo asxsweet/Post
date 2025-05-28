@@ -1,0 +1,27 @@
+
+# Python кэш файлдары
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Flask instance деректер
+instance/
+*.db
+*.sqlite3
+
+# Құпия деректер (API кілттер, т.б.)
+.env
+
+# VS Code баптаулары
+.vscode/
+
+# Виртуалды орта
+venv/
+env/
+
+# Лог файлдар
+*.log
+
+# Жүйелік файлдар
+.DS_Store
+Thumbs.db

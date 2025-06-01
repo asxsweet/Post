@@ -146,6 +146,8 @@ def login():
         user = User.query.filter_by(username=username).first()
 
         if user and check_password_hash(user.password, password):
+            session['user_id'] = user.id  # ✅ user_id мәнін беру керек
+
             session['username'] = user.username
             session['fullname'] = user.full_name  # Мысалы: 'Әли Ахмет'
             session['profile_image'] = user.profile_image  # Мысалы: 'avatar.jpg'

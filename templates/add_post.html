@@ -5,7 +5,7 @@
 {% block content %}
 <h1>Жаңа пост қосу</h1>
 
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     <div class="mb-3">
         <label for="title" class="form-label">Атауы</label>
         <input type="text" id="title" name="title" class="form-control" required>
@@ -14,8 +14,13 @@
         <label for="content" class="form-label">Мазмұны</label>
         <textarea id="content" name="content" class="form-control" rows="5" required></textarea>
     </div>
+    <div class="mb-3">
+        <label for="image" class="form-label">Сурет жүктеу</label>
+        <input type="file" id="image" name="image" class="form-control">
+    </div>
     <button type="submit" class="btn btn-primary">Сақтау</button>
 </form>
 
 <a href="{{ url_for('index') }}" class="btn btn-link mt-3">← Басты бетке қайту</a>
 {% endblock %}
+

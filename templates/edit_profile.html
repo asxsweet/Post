@@ -1,0 +1,27 @@
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Профильді өңдеу</title>
+</head>
+<body>
+    <h1>Профильді өңдеу</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Аты-жөні:</label><br>
+        <input type="text" name="full_name" value="{{ user.full_name or '' }}"><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" value="{{ user.email or '' }}"><br><br>
+
+        <label>Профиль суреті:</label><br>
+        <input type="file" name="profile_image"><br>
+        {% if user.profile_image %}
+            <img src="{{ url_for('static', filename='uploads/' + user.profile_image) }}" width="100"><br>
+        {% endif %}
+        <br><br>
+
+        <button type="submit">Сақтау</button>
+    </form>
+    <br>
+    <a href="{{ url_for('profile') }}">← Профильге оралу</a>
+</body>
+</html>

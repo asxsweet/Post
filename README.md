@@ -5,7 +5,7 @@
 ## 🔧 Қолданылатын технологиялар
 
 - Python 🐍
-- Flask 🌐
+- Flask 🌐res
 - SQLite 🗂
 - HTML + CSS (Jinja2 шаблондар)
 
